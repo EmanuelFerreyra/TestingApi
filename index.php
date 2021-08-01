@@ -1,75 +1,12 @@
 <?php
 
 
-interface Text
-{
-    public function setText($text);
-    public function getText();
-}
 
+include './clientView.php';
+include './InterfaceText.php';
+include './HelloAmerica.php';
+include './HelloWord.php';
 
-class HelloWord implements Text
-{
-
-    private $text;
-
-    function __construct($text)
-    {
-        $this->text = $text;
-    }
-
-    public function setText($text)
-    {
-
-        $this->text = $text;
-        return $this;
-    }
-
-    public function getText()
-    {
-        return $this->text;
-    }
-}
-
-class HelloAmerica implements Text
-{
-
-    private $text;
-
-    function __construct()
-    {
-        $this->text = 'Hola America';
-    }
-
-    public function setText($text)
-    {
-
-        $this->text = $text;
-        return $this;
-    }
-
-    public function getText()
-    {
-        return $this->text;
-    }
-}
-
-class UsertHtml
-{
-
-    public $txt;
-
-    public function __construct(Text $txt)
-    {
-        $this->txt = $txt;
-    }
-
-
-    public function onTxt()
-    {
-        return $this->txt;
-    }
-}
 
 
 //Test
