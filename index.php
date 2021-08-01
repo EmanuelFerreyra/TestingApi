@@ -3,13 +3,20 @@
 
 
 include './src/text/clientView.php';
+include './src/number/InterfaceNumber.php';
 include './src/text/InterfaceText.php';
 include './src/text/HelloAmerica.php';
 include './src/text/HelloWord.php';
+include './src/number/NumberMaxAge.php';
 
 
 
-//Test
+//*test Number
+
+$number =  new NumberMaxAge( 18 );
+print $number->getNumber();
+
+//*Test 
 $view = new UsertHtml(new HelloAmerica);
 print $view->onTxt()
     ->getText();
