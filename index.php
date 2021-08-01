@@ -2,10 +2,10 @@
 
 
 
-include './clientView.php';
-include './InterfaceText.php';
-include './HelloAmerica.php';
-include './HelloWord.php';
+include './src/text/clientView.php';
+include './src/text/InterfaceText.php';
+include './src/text/HelloAmerica.php';
+include './src/text/HelloWord.php';
 
 
 
