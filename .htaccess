@@ -1,0 +1,4 @@
+Options +FollowSymLinks 
+RewriteEngine on
+
+RewriteRule ^api/product/([0-9]+)$ api/product.php?id=$1
