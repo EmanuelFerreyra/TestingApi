@@ -5,7 +5,7 @@ namespace testapi\connection;
 use Mysqli;
 
 
-class connection  implements RepositoryConnection{
+class Connection  implements RepositoryConnection{
     
     private $conn;
 

@@ -8,7 +8,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "testapi\\connection\\":"src/Connection"
+            "testapi\\connection\\":"src/Connection",
+            "testapi\\query\\":"src/Query"
         }
     },
     "require-dev": {
