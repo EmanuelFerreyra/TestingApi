@@ -1,19 +1,16 @@
 <?php
 
 
-namespace testApi\query;
-
-require '../../vendor/autoload.php';
+namespace testapi\query;
 
 use testapi\connection\RepositoryConnection;
-use testapi\connection\Connection;
-
 
 
 class QueryMysqli{
     
     
     protected $query;
+    protected $table;
     protected $conn;
 
 
@@ -21,15 +18,36 @@ class QueryMysqli{
         $this->conn = $conn;
     }
 
-    public function querySelectAll( $table ){
+    public function querySelectAll(){
 
-        $sql = "SELECT * FROM $table";
+        $sql = "SELECT * FROM $this->table";
         $result = $this->conn->on()->query($sql);
 
         var_dump($result);
 
     }
 
+    public function queryDeleteId( $id ){
+        //delete by Id
+    }
+
+
+    public function queryUpdateById( $id, $newDate ){
+        //Agregamos un nuevo dato
+    }
+
+
+    public function queryCreateNewDate( array $date ){
+
+    }
+
+
+    public function setTable( $table ){
+        $this->table = $table;
+        return $this;
+    }
+
 }
+
 
 
