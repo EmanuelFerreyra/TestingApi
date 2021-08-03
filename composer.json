@@ -1,0 +1,17 @@
+{
+    "name": "testapi123/test",
+    "authors": [
+        {
+            "name": "mamels",
+            "email": "mamels-1409@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "testapi\\connection\\":"src/Connection"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
