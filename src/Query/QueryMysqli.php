@@ -12,6 +12,7 @@ class QueryMysqli{
     protected $query;
     protected $table;
     protected $conn;
+    protected $result;
 
 
     public function __construct( RepositoryConnection $conn ){
@@ -21,10 +22,18 @@ class QueryMysqli{
     public function querySelectAll(){
 
         $sql = "SELECT * FROM $this->table";
-        $result = $this->conn->on()->query($sql);
+        $this->result = $this->conn->on()->query($sql);  
+        return $this;
+    }
 
-        var_dump($result);
 
+    public function querySelectById( $id ){
+
+        $sql = "SELECT * FROM $this->table WHERE id_product = $id";
+        $this->result = $this->conn->on()->query($sql);  
+    
+        return $this;
+    
     }
 
     public function queryDeleteId( $id ){
@@ -46,6 +55,37 @@ class QueryMysqli{
         $this->table = $table;
         return $this;
     }
+
+    //*mostramos como Resultado en formato Json
+    public function  ViewJson(){
+        $json = [];
+
+        if( $this->result->num_rows > 0){
+            while( $row = $this->result->fetch_assoc()){
+                $json[] = $row;
+            }
+            return json_encode($json);
+        }   
+
+        $json = ['error' => 'no existe datos']; 
+        return json_encode($json);
+    }
+        //Mostramos resultado en Array
+    public function ViewArray(){
+        $array = [];
+
+        if( $this->result->num_rows > 0){
+            while( $row = $this->result->fetch_assoc()){
+                $array[] = $row;
+            }
+            return $array;
+        }
+
+        return  $array = ['error' => 'no existe datos'];
+        
+    }
+
+
 
 }
 
